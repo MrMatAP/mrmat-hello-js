@@ -31,44 +31,44 @@ const better_assert = require('better-assert')
 const expected = require('unexpected')
 
 
-describe('Mocha Basics', function() {
+describe('Mocha Basics', () => {
 
     /**
      * There are various means to use assertions in Mocha
      */
-    describe('Mocha Assertion Frameworks', function() {
+    describe('Mocha Assertion Frameworks', () => {
 
-        it('Node Assert', function() {
+        it('Node Assert', () => {
             assert.equal([1,2,3].indexOf(4), -1)
         })
 
-        it('Should', function() {
+        it('Should', () => {
             ([1,2,3].indexOf(4)).should.be.exactly(-1)
         })
 
-        it('Expect', function() {
+        it('Expect', () => {
             expect([1,2,3].indexOf(4)).to.equal(-1)
         })
 
         // We cannot test Chain - Should because both should.js and Chai would modify
         // the Object prototype
 
-        it('Chai - Expect', function() {
+        it('Chai - Expect', () => {
             chai_expect([1,2,3].indexOf(4)).to.equal(-1)
         })
 
-        it('Chai - Assert', function() {
+        it('Chai - Assert', () => {
             chai_assert.equal(
                 [1,2,3].indexOf(4),
                 -1,
                 'The indexOf function returns -1 for out of bounds indices')
         })
 
-        it('Better Assert', function() {
+        it('Better Assert', () => {
             better_assert([1,2,3].indexOf(4) === -1)
         })
 
-        it('Unexpected', function() {
+        it('Unexpected', () => {
             expected([1,2,3].indexOf(4), 'to be', -1)
         })
     })
