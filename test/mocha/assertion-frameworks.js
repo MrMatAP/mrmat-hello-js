@@ -30,47 +30,51 @@ const chai_assert = require('chai').assert
 const better_assert = require('better-assert')
 const expected = require('unexpected')
 
+//
+// There are various assertion frameworks available in Mocha and there
+// are various test 'interfaces' available.
+// I think I prefer the TDD interface and Chai - Assert
 
-describe('Mocha Basics', () => {
+suite('Mocha Basics', () => {
 
-    /**
-     * There are various means to use assertions in Mocha
-     */
-    describe('Mocha Assertion Frameworks', () => {
+    // suiteSetup()
+    // setup()
+    // test()
+    // teardown()
+    // suiteTeardown()
 
-        it('Node Assert', () => {
-            assert.equal([1,2,3].indexOf(4), -1)
-        })
+    test('Node Assert', () => {
+        assert.equal([1,2,3].indexOf(4), -1)
+    })
 
-        it('Should', () => {
-            ([1,2,3].indexOf(4)).should.be.exactly(-1)
-        })
+    test('Should', () => {
+        ([1,2,3].indexOf(4)).should.be.exactly(-1)
+    })
 
-        it('Expect', () => {
-            expect([1,2,3].indexOf(4)).to.equal(-1)
-        })
+    test('Expect', () => {
+        expect([1,2,3].indexOf(4)).to.equal(-1)
+    })
 
-        // We cannot test Chain - Should because both should.js and Chai would modify
-        // the Object prototype
+    // We cannot test Chain - Should because both should.js and Chai would modify
+    // the Object prototype
 
-        it('Chai - Expect', () => {
-            chai_expect([1,2,3].indexOf(4)).to.equal(-1)
-        })
+    test('Chai - Expect', () => {
+        chai_expect([1,2,3].indexOf(4)).to.equal(-1)
+    })
 
-        it('Chai - Assert', () => {
-            chai_assert.equal(
-                [1,2,3].indexOf(4),
-                -1,
-                'The indexOf function returns -1 for out of bounds indices')
-        })
+    test('Chai - Assert', () => {
+        chai_assert.equal(
+            [1,2,3].indexOf(4),
+            -1,
+            'The indexOf function returns -1 for out of bounds indices')
+    })
 
-        it('Better Assert', () => {
-            better_assert([1,2,3].indexOf(4) === -1)
-        })
+    test('Better Assert', () => {
+        better_assert([1,2,3].indexOf(4) === -1)
+    })
 
-        it('Unexpected', () => {
-            expected([1,2,3].indexOf(4), 'to be', -1)
-        })
+    test('Unexpected', () => {
+        expected([1,2,3].indexOf(4), 'to be', -1)
     })
 
 })
