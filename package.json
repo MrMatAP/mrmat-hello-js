@@ -14,7 +14,8 @@
     "url": "https://github.com/MrMatAP/mrmat-hello-js.git"
   },
   "scripts": {
-    "test-mocha": "mocha --recursive test/mocha"
+    "test-mocha": "mocha --recursive test/mocha",
+    "test-ci-mocha": "mocha --recursive -R xunit --reporter-option output=build/xunit.xml test/mocha"
   },
   "dependencies": {},
   "devDependencies": {
