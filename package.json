@@ -1,0 +1,28 @@
+{
+  "name": "mrmat-hello-js",
+  "version": "1.0.0",
+  "author": "Mathieu Imfeld <imfeldma+9jqerw@gmail.com>",
+  "description": "Experiments in JS",
+  "keywords": [
+    "experiments",
+    "js"
+  ],
+  "homepage": "https://github.com/MrMatAP/mrmat-hello-js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrMatAP/mrmat-hello-js.git"
+  },
+  "scripts": {
+    "test-mocha": "mocha --recursive test/mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "better-assert": "^1.0.2",
+    "chai": "^4.3.6",
+    "expect.js": "^0.3.1",
+    "mocha": "^9.2.2",
+    "should": "^13.2.3",
+    "unexpected": "^12.0.4"
+  }
+}
