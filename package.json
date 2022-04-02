@@ -7,6 +7,13 @@
     "experiments",
     "js"
   ],
+  "private": true,
+  "type": "module",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "main": "index.js",
   "homepage": "https://github.com/MrMatAP/mrmat-hello-js",
   "license": "MIT",
   "repository": {
@@ -14,12 +21,35 @@
     "url": "https://github.com/MrMatAP/mrmat-hello-js.git"
   },
   "scripts": {
-    "test-mocha": "mocha --recursive test/mocha",
-    "test-ci-mocha": "mocha --recursive -R xunit --reporter-option output=build/xunit.xml test/mocha"
+    "test-mocha": "c8 mocha test/mocha",
+    "test-ci-mocha": "c8 mocha -R xunit --reporter-option output=build/xunit.xml test/mocha"
+  },
+  "c8": {
+    "all": true,
+    "include": [
+      "index.js",
+      "lib/**/*.js"
+    ],
+    "reporter": [
+      "cobertura",
+      "text"
+    ],
+    "report-dir": "build/coverage",
+    "temp-dir": "build/.tmp"
+  },
+  "mocha": {
+    "recursive": true,
+    "bail": false,
+    "ui": "tdd",
+    "watch-files": [
+      "lib/**/*.js",
+      "test/**/*.js"
+    ]
   },
   "dependencies": {},
   "devDependencies": {
     "better-assert": "^1.0.2",
+    "c8": "^7.11.0",
     "chai": "^4.3.6",
     "expect.js": "^0.3.1",
     "mocha": "^9.2.2",

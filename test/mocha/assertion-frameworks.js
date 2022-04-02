@@ -22,13 +22,12 @@
  * SOFTWARE.
  */
 
-const assert = require('assert');
-require('should')
-const expect = require('expect.js')
-const chai_expect = require('chai').expect
-const chai_assert = require('chai').assert
-const better_assert = require('better-assert')
-const expected = require('unexpected')
+import { default as node_assert } from 'assert';       // Default import
+import { default as should } from 'should';             // Default import
+import { default as expect } from 'expect.js';          // Default import
+import { expect as chai_expect, assert as chai_assert } from 'chai'
+import { default as better_assert } from 'better-assert'
+import { default as expected } from 'unexpected'
 
 //
 // There are various assertion frameworks available in Mocha and there
@@ -44,7 +43,7 @@ suite('Mocha Basics', () => {
     // suiteTeardown()
 
     test('Node Assert', () => {
-        assert.equal([1,2,3].indexOf(4), -1)
+        node_assert.equal([1,2,3].indexOf(4), -1)
     })
 
     test('Should', () => {

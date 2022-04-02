@@ -71,6 +71,7 @@ jobs:
         name: Test and Coverage
         path: |
           build/xunit.xml
+          build/coverage/cobertura-coverage.xml
 
     - name: Conditional Release
       uses: marvinpinto/action-automatic-releases@latest
