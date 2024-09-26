@@ -1,3 +1,4 @@
+---
 #
 # How to build this
 
@@ -37,21 +38,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
     - name: Checkout our code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Calculate Build Context
       run: |
         MRMAT_VERSION="${MAJOR}.${MINOR}.${GITHUB_RUN_NUMBER}"
-         if [ "$GITHUB_EVENT_NAME" == 'pull_request_target' && GITHUB_BASE_REF == 'main']; then
-           MRMAT_IS_RELEASE=true
-           echo "::warning ::Building release ${MRMAT_VERSION}"
-           echo "MRMAT_IS_RELEASE=true" >> $GITHUB_ENV
-         else
-           MRMAT_VERSION="${MRMAT_VERSION}.dev0"
-           echo "::warning ::Building version ${MRMAT_VERSION}"
-         fi
-         echo "MRMAT_VERSION=${MRMAT_VERSION}" >> $GITHUB_ENV
+        if [ "$GITHUB_EVENT_NAME" == 'pull_request_target' && GITHUB_BASE_REF == 'main']; then
+          MRMAT_IS_RELEASE=true
+          echo "::warning ::Building release ${MRMAT_VERSION}"
+          echo "MRMAT_IS_RELEASE=true" >> $GITHUB_ENV
+        else
+          MRMAT_VERSION="${MRMAT_VERSION}.dev0"
+          echo "::warning ::Building version ${MRMAT_VERSION}"
+        fi
+        echo "MRMAT_VERSION=${MRMAT_VERSION}" >> $GITHUB_ENV
 
     - name: Setup Node.js ${{ env.NODE_VERSION }}
       uses: actions/setup-node@v3
@@ -62,10 +64,13 @@ jobs:
     - name: Build
       run: |
         yarn install
+
+    - name: Test
+      run: |
         yarn run test-ci-mocha
 
     - name: Upload test results
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
         name: Test and Coverage
