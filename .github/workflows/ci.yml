@@ -46,8 +46,6 @@ jobs:
     - name: Apply version
       run:
         npm version ${{ needs.version.outputs.version }} --no-git-tag-version
-    - name: Build
-      run: npm run bundle
     - name: Lint
       run: npm run ci-lint
     - name: Upload Lint results
