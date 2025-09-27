@@ -1,8 +1,8 @@
 # MrMat :: Hello JS
 
-Experiments in Javascript.
+Experiments in Javascript and TypeScript.
 
-> Consider this perpetually broken 
+> Consider this perpetually experimental 
 
 ## Test Frameworks
 
