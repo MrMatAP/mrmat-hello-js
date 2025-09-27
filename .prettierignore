@@ -1,0 +1,7 @@
+.DS_Store
+.licenses/
+node_modules/
+**/*.md
+**/*.json
+**/*.yaml
+**/*.yml

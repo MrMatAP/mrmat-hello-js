@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2022  Mr Mat
+ * Copyright (c) 2025  Mr Mat
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,22 +22,6 @@
  * SOFTWARE.
  */
 
-import { assert } from 'chai'
-
-import { hello } from '../../index.js'
-
-
-suite('MrMat :: Hello JS', () => {
-
-    test('We get a default Hello World', () => {
-        assert(hello(),
-            'Hello World',
-            'We get the expected default greeting')
-    })
-
-    test('We can override the default name to greet', () => {
-        assert(hello('MrMat'),
-            'Hello MrMat',
-            'We get the expected overridden greeting')
-    })
-})
+export function sum(a: number, b: number): number {
+    return a + b
+}
