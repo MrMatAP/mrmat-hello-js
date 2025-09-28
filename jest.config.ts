@@ -31,10 +31,10 @@ const config: Config = {
     verbose: true,
     clearMocks: true,
     collectCoverage: true,
-    collectCoverageFrom: ['./src/**'],
+    collectCoverageFrom: [ './src/**' ],
     coverageDirectory: './build',
-    coveragePathIgnorePatterns: ['/node_modules/', '/dist/'],
-    coverageReporters: ['json-summary', 'text'],
+    coveragePathIgnorePatterns: [ '/node_modules/', '/dist/' ],
+    coverageReporters: [ 'json-summary', 'text' ],
     // Uncomment the below lines if you would like to enforce a coverage threshold
     // for your action. This will fail the build if the coverage is below the
     // specified thresholds.
@@ -46,17 +46,17 @@ const config: Config = {
     //     statements: 100
     //   }
     // },
-    extensionsToTreatAsEsm: ['.ts'],
-    moduleFileExtensions: ['ts', 'js'],
+    extensionsToTreatAsEsm: [ '.ts' ],
+    moduleFileExtensions: [ 'ts', 'js' ],
     preset: 'ts-jest',
     reporters: [
         'default',
-        ['jest-junit', { outputDirectory: './build', outputName: 'junit.xml' }]
+        [ 'jest-junit', { outputDirectory: './build', outputName: 'junit.xml' } ]
     ],
     resolver: 'ts-jest-resolver',
     testEnvironment: 'node',
-    testMatch: ['**/*.test.ts'],
-    testPathIgnorePatterns: ['/dist/', '/node_modules/'],
+    testMatch: [ '**/*.test.ts' ],
+    testPathIgnorePatterns: [ '/dist/', '/node_modules/' ],
     transform: {
         '^.+\\.ts$': [
             'ts-jest',

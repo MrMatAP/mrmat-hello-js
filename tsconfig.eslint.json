@@ -9,7 +9,7 @@
   "include": [
     "test",
     "src",
-    "eslint.config.mjs",
-    "jest.config.js"
+    "eslint.config.ts",
+    "jest.config.ts"
   ]
 }
