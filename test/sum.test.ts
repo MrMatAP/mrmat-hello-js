@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2022  Mr Mat
+ * Copyright (c) 2025  Mr Mat
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,4 +22,10 @@
  * SOFTWARE.
  */
 
-export { hello } from './lib/mrmat-hello-js.js';
+import { sum } from '../src/sum/sum.js'
+
+describe('sum Tests', () => {
+    test('1 plus 2 equals 3', () => {
+        expect(sum(1, 2)).toBe(3)
+    })
+})

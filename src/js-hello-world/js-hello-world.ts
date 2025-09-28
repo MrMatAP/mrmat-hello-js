@@ -26,8 +26,4 @@ function hello(name = 'World') {
     return 'Hello ' + name
 }
 
-function howdy(name = 'World') {
-    return 'Howdy ' + name
-}
-
-export { hello, howdy };
+export { hello }
